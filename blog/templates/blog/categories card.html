@@ -1,0 +1,17 @@
+<div class="col-md-4 col-lg-3">
+    <div class="card mb-4" id="categories-card">
+        <div class="card-header">Categories</div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-sm-6">
+                    <ul class="list-unstyled mb-0">
+                        {% for c in categories %}
+                        <li><a href="{{ c.get_absolute_url }}">{{ c.name }} ({{ c.post_set.count }})</a></li>
+                        {% endfor %}
+                        <li><a href="/blog/category/no-category/">미분류 ({{ no_category_post_count }})</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

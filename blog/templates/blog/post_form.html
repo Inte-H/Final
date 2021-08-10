@@ -1,0 +1,18 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}새 글 등록하기 | Blog{% endblock %}
+
+{%block main_area %}
+<h1>새 글 등록하기</h1>
+<hr/>
+<form method="post" enctype="multipart/form-data">{% csrf_token %}
+    <table>
+        {{ form }}
+        <tr>
+            <th><label for="id_tags_str">Tags:</label></th>
+            <td><input type="text" name="tags_str" id="id_tags_str"></td>
+        </tr>
+    </table>
+    <button _ngcontent-pax-c60="" data-cy="createButton" type="submit" class="btn btn-primary float-end">Create Post</button>
+</form>
+{% endblock %}
